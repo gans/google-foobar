@@ -24,17 +24,16 @@ public class ILoveLanceJanice {
 	}
 	
 	public static String solution(String x) {
-		return String.join("",
+		return 
 			x.chars().mapToObj(c -> (int)c)
 				.map(code -> {
 					if (code >= 97 && code <= 122) {
 						code -= 97;
 						code = Math.abs(code - 25);
-						
 						code += 97;
 					}
 					return String.valueOf((char)code.intValue());
-				}).collect(Collectors.toList())
+				}).collect(Collectors.joining("")
 			);
 
 	}
