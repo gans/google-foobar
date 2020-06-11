@@ -35,10 +35,10 @@ func add_cripto(ch chan string, x string) {
     for _, char := range x {
         code = int(char)
         if (code >= 97 && code <= 122) {
-	        code -= 97
+            code -= 97
             code = code - 25
-			code = int(math.Abs(float64(code)))
-			code += 97;
+            code = int(math.Abs(float64(code)))
+            code += 97;
         }
         ch <- string(code)
     }
@@ -49,11 +49,11 @@ func fetch_cripto(ch chan string) {
     for {
         x, flag := <-ch
         if flag == true {
-			fmt.Print(x)
-		} else {
+            fmt.Print(x)
+        } else {
             fmt.Println()
-			break
-		}
+            break
+        }
     }
 }
 
@@ -65,10 +65,10 @@ func solution(x string) string {
     for _, char := range x {
         code = int(char)
         if (code >= 97 && code <= 122) {
-	        code -= 97
+            code -= 97
             code = code - 25
-			code = int(math.Abs(float64(code)))
-			code += 97;
+            code = int(math.Abs(float64(code)))
+            code += 97;
         }
         result += string(code)
     }
